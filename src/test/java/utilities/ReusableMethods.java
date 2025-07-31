@@ -4,9 +4,13 @@ import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collections;
@@ -255,5 +260,35 @@ public class ReusableMethods {
                 System.out.println("//" + tag + "[@id='" + id + "' and @name='" + name + "']");
             }
         }
+    }
+
+    // 1. Temel Scroll Metodu
+    public static void scrollToElement(WebElement element) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(element).perform();
+        //<===============cagrılması ===========================>
+        //ReusableMethods.scrollToElement(practiceexpandtestingPage.oneTimePasswordButtons);
+        //<=====================================================>
+
+    }
+
+    // 2. Scroll + Beklemeli Versiyon
+    public static void scrollToElementWithWait(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        wait.until(ExpectedConditions.visibilityOf(element));
+        scrollToElement(element);
+        //<-- scrollToElementWithWait Methodunun Cagırılması -->
+        //ReusableMethods.scrollToElementWithWait(practiceexpandtestingPage.oneTimePasswordButtons,300);
+        // <-- =================================== -->
+    }
+
+    // 3. Sayfa Sonuna Scroll
+    public static void scrollToBottom() {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        // <-- scrollBottom methodunun Cagırılması -->
+        //ReusableMethods.scrollToBottom();
+        // <-- =================================== -->
     }
 }

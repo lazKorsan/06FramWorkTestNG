@@ -26,6 +26,9 @@ public PracticeexpandtestingPage(){
     @FindBy(xpath = "//input[@id=\"search-input\"]")
     public WebElement searchBox ;
 
+    @FindBy(xpath = "//*[@id=\"examples\"]/div[2]/div[1]/div/div[1]/h3/a")
+    public static WebElement oneTimePasswordButtons ;
+
 
 
 
