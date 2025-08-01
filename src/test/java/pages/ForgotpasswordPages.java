@@ -20,6 +20,27 @@ public class ForgotpasswordPages {
     @FindBy(xpath = "//*[@id=\"confirmation-alert\"]")
     public WebElement flashText ;
 
+    @FindBy(xpath = "//*[@id=\"btn-send-otp\"]")
+    public WebElement sendCodeButtons ;
+
+    @FindBy(xpath = "//*[@id=\"otp-message\"]")
+    public WebElement flashMessageText ;
+
+    @FindBy(xpath = "//*[@id=\"otp\"]")
+    public WebElement CorrectionCodeBox ;
+
+    @FindBy(xpath = "//*[@id=\"btn-send-verify\"]")
+    public WebElement verifiyingButtons ;
+
+    @FindBy(xpath = "//*[@id=\"flash\"]")
+    public WebElement flashVerifiyingMessage ;
+
+    @FindBy(xpath = "//*[@id=\"core\"]/div/div/a/i")
+    public WebElement LogOutButtons ;
+
+
+
+
 
 
 

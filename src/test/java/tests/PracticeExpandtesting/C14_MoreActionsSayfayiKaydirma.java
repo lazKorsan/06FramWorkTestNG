@@ -29,11 +29,11 @@ public class C14_MoreActionsSayfayiKaydirma {
 
         //<-- ===================Advanced Kaydırma Özelliği -->
         // Çoklu ayar örneği
-        ReusableMethods.scrollToElement(practiceexpandtestingPage.oneTimePasswordButtons)
-                .withSpeed(300)
-                .withRetry(3) // 3 deneme
-                .withScreenshotOnFail() // Hata durumunda screenshot
-                .execute();
+        //ReusableMethods.scrollToElement(practiceexpandtestingPage.oneTimePasswordButtons)
+        //        .withSpeed(300)
+        //        .withRetry(3) // 3 deneme
+        //        .withScreenshotOnFail() // Hata durumunda screenshot
+        //        .execute();
 
 
     }
